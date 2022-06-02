@@ -1,0 +1,34 @@
+from abc import ABC, abstractmethod
+class Druzyna():
+    def __init__(self,nazwa:str):
+        self.__nazwa=nazwa
+    @property
+    def nazwa(self):
+        return self.__nazwa
+    def __repr__(self):
+        return f'Druzyna: {self.__nazwa}'
+
+class Sedzia():
+    def __init__(self,imie:str,nazwisko:str):
+        self.__imie=imie
+        self.__nazwisko=nazwisko
+    @property
+    def imie(self):
+        return self.__imie
+    @property
+    def nazwisko(self):
+        return self.__nazwisko
+    def __repr__(self):
+        return f'Sędzia: {self.__imie} {self.__nazwisko}'
+
+class Siatkowka():
+    def __init__(self):
+        self.__druzyny=[]
+    def dodaj_druzyne(self, d:Druzyna):
+        self.__druzyny.append(d)
+    def usun_druzyne(self, d:Druzyna):
+        self.__druzyny.pop(d)
+    def __repr__(self):
+        return f'{self.__druzyny}'
+
+Siatkowka('asd')
